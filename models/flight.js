@@ -23,3 +23,9 @@ const flightSchema = new Schema({
     default: () => new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
   }
 })
+
+const Flight = mongoose.model('Flight', flightSchema)
+
+export {
+  Flight
+}
