@@ -1,5 +1,6 @@
 import { Meal } from "../models/meal.js";
 
+
 function newMeal(req, res) {
   Meal.find({})
   .then(meals => {
