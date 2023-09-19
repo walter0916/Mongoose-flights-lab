@@ -19,6 +19,36 @@
     <div>Departure Date: </div>
     <div><%= flight.departs %></div>
   </section>
+  <h2>Add Tickets</h2>
+  <form id='add-tickets'action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="seat-input">Seat Number</label>
+    <input type="text" name="seat" id="seat-input">
+    <label for="price-input">Price</label>
+    <input type="number" name="price" id="price-input">
+    <button type="submit">Add Ticket</button>
+  </form>
+
+  <% if (flight.tickets.length) { %>
+    <table>
+      <thead>
+        <h3>Tickets</h3>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.tickets.forEach(ticket => { %>
+          <tr>
+            <td><%= ticket.seat %></td>
+            <td><%= ticket.price %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h3>No Tickets Yet</h3>
+  <% } %>
 </main>
 
 
