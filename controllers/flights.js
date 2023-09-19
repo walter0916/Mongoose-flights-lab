@@ -72,10 +72,6 @@ function edit(req, res)  {
       flight,
       title: 'Edit Flight'
     })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/flights/new')
-    })
   })
   .catch(err => {
     console.log(err)
