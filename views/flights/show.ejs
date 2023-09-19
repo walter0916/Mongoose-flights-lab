@@ -22,7 +22,7 @@
   <h2>Add Tickets</h2>
   <form id='add-tickets'action="/flights/<%= flight._id %>/tickets" method="POST">
     <label for="seat-input">Seat Number</label>
-    <input type="text" name="seat" id="seat-input">
+    <input type="text" name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
     <label for="price-input">Price</label>
     <input type="number" name="price" id="price-input">
     <button type="submit">Add Ticket</button>
